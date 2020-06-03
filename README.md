@@ -13,7 +13,6 @@ A spiro-spirograph i.e. a spirograph where the outer circle is replaced by a spi
 
 Spiral under displacement fields
 
-![Displacement fields][fields1]
 ![displacement fields][fields2]
 
 
