@@ -23,7 +23,7 @@ fields = [
 
     RadialField(3.0, [20.0, -5], lambda d: np.sin(d / 5)),
     DirectionalField(3.0, [-30.0, 5], [1, 1], lambda d: np.sin(d / 5)),
-    DirectionalField(3.0, [0.0, 30], [0, -1], lambda d: np.sin(d / 7)),
+    DirectionalField(3.0, [0.0, 30], [0, -1], lambda d: np.sin(d / 5)),
 ]
 
 
