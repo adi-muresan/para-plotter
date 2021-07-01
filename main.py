@@ -2,6 +2,7 @@ import plotter.plotter as pl
 from curves.spirograph import Spirograph
 from curves.fields import RadialField, DirectionalField, apply_fields
 from curves.spiral import spiral
+import eigen.gen as g
 
 import numpy as np
 
@@ -15,17 +16,26 @@ import numpy as np
 # pl.plot_parametric(s1, t_space)
 
 
-# How about some displacement fields
-fields = [
-    # RadialField(1.0, [-20.0, -15.0], gaussian(15, 0.0, 30)),
-    # RadialField(-1.0, [40.0, 20.0]),
-    # RadialField(-1.0, [-20, -15]),
+def test_displacement_field():
+    # How about some displacement fields
+    fields = [
+        # RadialField(1.0, [-20.0, -15.0], gaussian(15, 0.0, 30)),
+        # RadialField(-1.0, [40.0, 20.0]),
+        # RadialField(-1.0, [-20, -15]),
 
-    RadialField(3.0, [20.0, -5], lambda d: np.sin(d / 5)),
-    DirectionalField(3.0, [-30.0, 5], [1, 1], lambda d: np.sin(d / 5)),
-    DirectionalField(3.0, [0.0, 30], [0, -1], lambda d: np.sin(d / 5)),
-]
+        RadialField(3.0, [20.0, -5], lambda d: np.sin(d / 5)),
+        DirectionalField(3.0, [-30.0, 5], [1, 1], lambda d: np.sin(d / 5)),
+        DirectionalField(3.0, [0.0, 30], [0, -1], lambda d: np.sin(d / 5)),
+    ]
 
 
-t_space = np.linspace(0, 100 * np.pi, 10000)
-pl.plot_parametric(spiral(3, fields), t_space)
+    t_space = np.linspace(0, 100 * np.pi, 10000)
+    pl.plot_parametric(spiral(3, fields), t_space)
+
+
+def test_eigenfish():
+    values = g.fish(10000)
+    g.plot(values)
+
+
+test_eigenfish()
